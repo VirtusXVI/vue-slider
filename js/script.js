@@ -3,8 +3,6 @@ var app = new Vue(
         el: "#app",
         data:   {
             actualElement: 0,
-            activeClass: "false",
-            thumbIndex: index,
             slides: [
                 {
                     image: 'img/01.jpg',
@@ -47,6 +45,10 @@ var app = new Vue(
                 } else{
                     this.actualElement -= 1;
                 }
+            },
+            setActualElement(index){
+                console.log(index)
+                this.actualElement = index;
             }
         }
     }
