@@ -3,7 +3,8 @@ var app = new Vue(
         el: "#app",
         data:   {
             actualElement: 0,
-            activeClass: "active",
+            activeClass: "false",
+            thumbIndex: index,
             slides: [
                 {
                     image: 'img/01.jpg',
