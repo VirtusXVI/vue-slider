@@ -3,6 +3,7 @@ var app = new Vue(
         el: "#app",
         data:   {
             actualElement: 0,
+            sliderInterval: false,
             slides: [
                 {
                     image: 'img/01.jpg',
@@ -47,9 +48,17 @@ var app = new Vue(
                 }
             },
             setActualElement(index){
-                console.log(index)
                 this.actualElement = index;
+            },
+            carouselStop(){
+                clearInterval(sliderInterval);
+            },
+            carouselStart(){
+                sliderInterval = setInterval(this.nextElement, 1000);
             }
+        },
+        mounted() {
+            sliderInterval = setInterval(this.nextElement, 1000);
         }
     }
 )
